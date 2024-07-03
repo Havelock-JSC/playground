@@ -1,0 +1,12 @@
+type Foo {
+    x: Int!
+    y: Int
+}
+
+type Query {
+    getFoo: Foo!
+}
+
+type Subscription {
+    getFooSubscription: Foo!
+}
