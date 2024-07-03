@@ -1,0 +1,15 @@
+package foo.app
+
+import graphql.model.Foo
+import org.springframework.graphql.data.method.annotation.BatchMapping
+import org.springframework.graphql.data.method.annotation.QueryMapping
+import org.springframework.stereotype.Controller
+
+@Controller
+class QueryController {
+    @QueryMapping
+    fun getFoo() = Foo(5)
+
+    @BatchMapping(typeName = "Foo", field = "y")
+    fun fooY(foos: List<Foo>) = foos.associateWith { 7 }
+}

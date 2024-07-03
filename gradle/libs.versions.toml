@@ -1,0 +1,12 @@
+[versions]
+kotlin = "2.1.0"
+springBoot = "3.4.0"
+
+[libraries]
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+graphql-codegen = { id = "io.github.kobylynskyi.graphql.codegen", version = "5.10.0" }
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+spring-kotlin = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
