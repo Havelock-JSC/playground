@@ -1,6 +1,5 @@
 type Foo {
     x: Int!
-    y: Int
 }
 
 type Query {
