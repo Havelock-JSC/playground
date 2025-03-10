@@ -1,5 +1,5 @@
 type Foo {
-    x: Int!
+    x: String!
 }
 
 type Query {
@@ -7,6 +7,5 @@ type Query {
 }
 
 type Subscription {
-    getFooSubscription: Foo!
     getFooSubscriptionReactive: Foo!
 }
