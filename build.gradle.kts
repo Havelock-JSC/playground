@@ -2,6 +2,7 @@ import com.kobylynskyi.graphql.codegen.model.GeneratedLanguage
 import io.github.kobylynskyi.graphql.codegen.gradle.GraphQLCodegenGradleTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.run.BootRun
+import java.net.URI
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
@@ -12,6 +13,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven { url = URI("https://repo.spring.io/snapshot") }
 }
 
 dependencies {
@@ -20,6 +22,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-websocket")
     implementation("org.springframework.boot:spring-boot-starter-graphql")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+}
+
+configurations.all {
+    resolutionStrategy {
+        force("org.springframework.graphql:spring-graphql:1.3.5-SNAPSHOT")
+    }
 }
 
 kotlin {
